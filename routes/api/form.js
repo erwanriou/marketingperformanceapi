@@ -21,7 +21,8 @@ router.get('/', async (req, res) => {
 router.post('/', multipart.fields([]) ,async (req, res) => {
   res.setHeader('Content-type', 'application/json')
   res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', 'https://performance-marketing.dk')
+  res.setHeader('Access-Control-Allow-Origin', '*/.amp.cloudflare.com')
+  res.setHeader('Access-Control-Allow-Origin', '*/.cdn.ampproject.org')
   res.setHeader('AMP-Access-Control-Allow-Source-Origin', 'https://' + req.headers.host)
   res.setHeader( 'AMP-Redirect-To', 'https://www.performance-marketing.dk/thank-you.html')
   res.setHeader('Access-Control-Expose-Headers', 'AMP-Access-Control-Allow-Source-Origin')
@@ -34,8 +35,6 @@ router.post('/', multipart.fields([]) ,async (req, res) => {
     email: req.body.email
   })
   await newUser.save()
-  console.log(req.headers.host);
-  res.redirect('https://www.performance-marketing.dk/thank-you.html')
 })
 
 
