@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+
 const form = require('./routes/api/form')
 
 // Run Express
@@ -20,7 +21,7 @@ mongoose
   .catch(err => console.error(err))
 
 // Middleware
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
 // Use Routes
