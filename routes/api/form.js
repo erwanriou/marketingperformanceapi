@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 router.post('/', multipart.fields([]) ,async (req, res) => {
   res.setHeader('Content-type', 'application/json')
   res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*.ampproject.org')
+  res.setHeader('Access-Control-Allow-Origin', 'https://performance-marketing.dk')
   res.setHeader('AMP-Access-Control-Allow-Source-Origin', 'https://' + req.headers.host)
   res.setHeader( 'AMP-Redirect-To', 'https://www.performance-marketing.dk/thank-you.html')
   res.setHeader('Access-Control-Expose-Headers', 'AMP-Access-Control-Allow-Source-Origin')
