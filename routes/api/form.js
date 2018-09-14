@@ -33,8 +33,7 @@ router.post('/', multipart.fields([]) ,async (req, res) => {
     email: req.body.email
   })
   await newUser.save()
-  console.log('success');
-  res.redirect('https://www.performance-marketing.dk/')
+  res.redirect('https://www.performance-marketing.dk/thank-you.html')
 })
 
 
